@@ -20,6 +20,7 @@ use PayPal\Common\PayPalModel;
  * @property \PayPal\Api\BankToken bank_account_token
  * @property \PayPal\Api\Credit credit
  * @property \PayPal\Api\CarrierAccountToken carrier_account_token
+ * @property \PayPal\Api\CarrierAccount carrier_account
  *
  */
 class FundingInstrument extends PayPalModel
@@ -229,6 +230,29 @@ class FundingInstrument extends PayPalModel
     public function getCarrierAccountToken()
     {
         return $this->carrier_account_token;
+    }
+
+    /**
+     * Carrier account information.
+     *
+     * @param \PayPal\Api\CarrierAccount $carrier_account
+     *
+     * @return $this
+     */
+    public function setCarrierAccount($carrier_account)
+    {
+        $this->carrier_account = $carrier_account;
+        return $this;
+    }
+
+    /**
+     * Carrier account information.
+     *
+     * @return \PayPal\Api\CarrierAccount
+     */
+    public function getCarrierAccount()
+    {
+        return $this->carrier_account;
     }
 
 }
